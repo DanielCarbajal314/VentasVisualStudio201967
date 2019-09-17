@@ -9,7 +9,7 @@ using Ventas.Servicios.Interfacez;
 using Ventas.Servicios.Interfacez.Peticiones;
 using Ventas.Servicios.Interfacez.Respuestas;
 
-namespace Ventas.Presentacion.Web.Controllers
+namespace Ventas.Presentacion.Web.Controllers.API
 {
     public class ClientesController : ApiController
     {
