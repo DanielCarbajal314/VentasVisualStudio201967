@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventas.Servicios.MapaDeConv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventas.Presentacion.Escritorio", "Ventas.Presentacion.Escritorio\Ventas.Presentacion.Escritorio.csproj", "{29FCEA15-064B-4047-9863-3C274F6EA19F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventas.Presentacion.Web", "Ventas.Presentacion.Web\Ventas.Presentacion.Web.csproj", "{587B9CB6-B22F-4935-AC1E-BB9F753D9C25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{29FCEA15-064B-4047-9863-3C274F6EA19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29FCEA15-064B-4047-9863-3C274F6EA19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29FCEA15-064B-4047-9863-3C274F6EA19F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{587B9CB6-B22F-4935-AC1E-BB9F753D9C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587B9CB6-B22F-4935-AC1E-BB9F753D9C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587B9CB6-B22F-4935-AC1E-BB9F753D9C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587B9CB6-B22F-4935-AC1E-BB9F753D9C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{6301D4A1-527A-4CBF-B4FD-666C23853C2A} = {AE2391B5-C7D9-4DC5-8CC9-43119A0BB475}
 		{A5BC1890-92B4-46B5-AAC7-A5341D2D8845} = {AE2391B5-C7D9-4DC5-8CC9-43119A0BB475}
 		{29FCEA15-064B-4047-9863-3C274F6EA19F} = {98CF9086-9F18-4D44-878F-1129C2E62C35}
+		{587B9CB6-B22F-4935-AC1E-BB9F753D9C25} = {98CF9086-9F18-4D44-878F-1129C2E62C35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {372BB100-1CF4-4906-9D33-671A8C7E0E08}
