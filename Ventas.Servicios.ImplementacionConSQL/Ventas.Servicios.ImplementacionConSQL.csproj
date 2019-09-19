@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestorDeClientes.cs" />
+    <Compile Include="GestorDePersonas.cs" />
+    <Compile Include="GestorDeProductos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -146,7 +146,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\API\ClientesController.cs" />
+    <Compile Include="Controllers\API\PersonasController.cs" />
+    <Compile Include="Controllers\API\ProductosController.cs" />
     <Compile Include="Controllers\GestionDeClientesController.cs" />
+    <Compile Include="Controllers\GestionDeVentasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +183,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Galerias\axios.js" />
+    <Content Include="Scripts\Servicios\Servicios.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -195,6 +199,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\GestionDeClientes\Index.cshtml" />
+    <Content Include="Views\GestionDeVentas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

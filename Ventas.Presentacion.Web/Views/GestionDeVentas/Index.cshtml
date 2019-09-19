@@ -1,0 +1,136 @@
+﻿<div class="col-12" id="app">
+    <b-modal id="formularioDeVenta" size="lg" title="Nueva Venta" @@ok="registrarVenta" @@cancel="limpiarFormulario" @@hidden="limpiarFormulario">
+        <div class="col-12">
+            <div class="col-12 row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <multiselect v-model="cliente" :options="listaDeClientes" label="NombreCompleto" placeholder="Cliente"></multiselect>
+                    </div>
+                    <b-form-group label="Tipo de Venta">
+                        <b-form-radio-group v-model="tipoDeVenta"
+                                            :options="listaDeTiposDeVenta"
+                                            name="radio-options"></b-form-radio-group>
+                    </b-form-group>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <multiselect v-model="vendedor" :options="listaDeVendedores" label="NombreCompleto" placeholder="Vendedor"></multiselect>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h3>Total : {{total}}</h3>
+                </div>
+            </div>
+           <div class="col-12 row">
+               <button class="btn btn-primary" v-on:click="agregarProducto">Agregar Producto</button>
+               <table class="table table-hover">
+                   <thead>
+                       <tr>
+                           <th>Categoria</th>
+                           <th>Producto</th>
+                           <th>Precio</th>
+                           <th>Cantidad</th>
+                           <th>total</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr v-for="detalle in listaDeDetalles">
+                           <td>
+                               <multiselect v-model="detalle.categoria" :options="listaDeCategorias" label="Nombre" @@input="refrescarProductosEnElDetalle(detalle)"></multiselect>
+                           </td>
+                           <td>
+                               <multiselect v-model="detalle.productoSelecionado" :options="detalle.listaDeProductos" label="Nombre" @@input="refrescarPrecioEnElDetalle(detalle)"></multiselect>
+                           </td>
+                           <td>{{detalle.precio}}</td>
+                           <td>
+                               <input type="number" v-model="detalle.cantidad" v-on:change="recalcularTotal(detalle)"/>
+                           </td>
+                           <td>{{detalle.total}}</td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+        </div>
+    </b-modal>
+    <button v-on:click="abrirFormulario" class="btn btn-primary">Registrar Venta</button>
+</div>
+
+<script src="~/Scripts/Servicios/Servicios.js"></script>
+<script>
+    Vue.component('multiselect', VueMultiselect.Multiselect);
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            value: null,
+            cliente: null,
+            vendedor: null,
+            listaDeClientes: [],
+            listaDeVendedores: [],
+            listaDeCategorias: [],
+            listaDeDetalles: [],
+            total: 0,
+            listaDeTiposDeVenta: ["Boleta","Factura"],
+            tipoDeVenta:null
+        },
+        methods: {
+            registrarVenta: function () {
+
+            },
+            limpiarFormulario: function () {
+
+            },
+            abrirFormulario: function () {
+                this.$bvModal.show('formularioDeVenta');
+            },
+            traerDatosDelServidor: function () {
+                Servicios.ConsultarClientes().then(x => this.listaDeClientes = x);
+                Servicios.ConsultarVendedores().then(x => this.listaDeVendedores = x);
+                Servicios.ConsultarCategorias().then(x => this.listaDeCategorias = x);
+            },
+            agregarProducto: function () {
+                this.listaDeDetalles.push({
+                    categoria: null,
+                    listaDeProductos: [],
+                    productoSelecionado: null,
+                    precio: 0,
+                    cantidad: 1,
+                    total: 0
+                });
+            },
+            refrescarProductosEnElDetalle: function (detalle) {
+                if (detalle.categoria) {
+                    detalle.productoSelecionado = null;
+                    Servicios
+                        .ConsultarProductosPorCategoria(detalle.categoria.Id)
+                        .then(x => detalle.listaDeProductos = x);
+                }
+            },
+            refrescarPrecioEnElDetalle: function (detalle) {
+                if (detalle.productoSelecionado) {
+                    detalle.precio = detalle.productoSelecionado.PrecioUnitario;
+                    detalle.total = detalle.precio * detalle.cantidad;
+                }
+            },
+            recalcularTotal: function (detalle) {
+                if (detalle.productoSelecionado) {
+                    detalle.total = detalle.precio * detalle.cantidad;
+                    this.calcularTotal();
+                }
+            },
+            calcularTotal: function () {
+                this.total = 0;
+                this.listaDeDetalles.forEach(detalle => {
+                    this.total += detalle.total;
+                });
+
+            }
+        }
+    })
+
+    app.traerDatosDelServidor();
+
+
+
+
+</script>
