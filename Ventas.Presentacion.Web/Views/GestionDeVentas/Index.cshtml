@@ -31,6 +31,7 @@
                            <th>Precio</th>
                            <th>Cantidad</th>
                            <th>total</th>
+                           <th>Acciones</th>
                        </tr>
                    </thead>
                    <tbody>
@@ -46,6 +47,9 @@
                                <input type="number" v-model="detalle.cantidad" v-on:change="recalcularTotal(detalle)"/>
                            </td>
                            <td>{{detalle.total}}</td>
+                           <td>
+                               <button class="btn btn-danger" v-on:click="eliminarDetalle(detalle)">Eliminar</button>
+                           </td>
                        </tr>
                    </tbody>
                </table>
@@ -124,6 +128,10 @@
                     this.total += detalle.total;
                 });
 
+            },
+            eliminarDetalle: function (detalle) {
+                this.listaDeDetalles = this.listaDeDetalles.filter(x => x !== detalle);
+                this.calcularTotal();
             }
         }
     })
