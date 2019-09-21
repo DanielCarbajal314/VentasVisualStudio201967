@@ -26,7 +26,7 @@ namespace Ventas.Servicios.MapaDeConversiones
                 ClienteId = nuevaVenta.IdCliente,
                 VendedorId = nuevaVenta.IdVendedor,
                 Fecha = DateTime.Now,
-                TipoDeVenta = (TipoDeVenta)nuevaVenta.TipoDeVenta,
+                TipoDeVenta = nuevaVenta.TipoDeVenta.Equals("Boleta")?TipoDeVenta.Boleta:TipoDeVenta.Factura,
                 Total = nuevaVenta.Total,
                 Detalles = detalleVentas
             };

@@ -106,7 +106,7 @@
             },
             registrar: function () {
                 let data = app.sacaObjetoDelFormulario();
-                if (this.esActualizacion) {
+                if (this.esActualizacion()) {
                     data.Id = this.Id;
                     axios.put('/api/Clientes/Actualizar', data)
                         .then(resultado => resultado.data)

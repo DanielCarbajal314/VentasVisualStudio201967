@@ -75,14 +75,34 @@
             listaDeDetalles: [],
             total: 0,
             listaDeTiposDeVenta: ["Boleta","Factura"],
-            tipoDeVenta:null
+            tipoDeVenta: null,
+            ventasRegistradas:[]
         },
         methods: {
             registrarVenta: function () {
-
+                Servicios.RegistrarVenta({
+                    IdVendedor: this.vendedor.Id,
+                    IdCliente: this.cliente.Id,
+                    Total: this.total,
+                    TipoDeVenta: this.tipoDeVenta,
+                    Detalles: this.listaDeDetalles.map(x => {                        
+                        return {
+                            IdProducto: x.productoSelecionado.Id,
+                            Cantidad: x.cantidad,
+                            Total: x.total
+                        };
+                    })
+                }).then(ventaRegistrada => {
+                    this.ventasRegistradas.push(ventaRegistrada);
+                    this.limpiarFormulario();
+                })
             },
             limpiarFormulario: function () {
-
+                this.tipoDeVenta = null;
+                this.cliente = null;
+                this.vendedor = null;
+                this.total = 0;
+                this.listaDeDetalles = [];
             },
             abrirFormulario: function () {
                 this.$bvModal.show('formularioDeVenta');

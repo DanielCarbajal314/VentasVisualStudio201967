@@ -11,5 +11,8 @@
     },
     ConsultarProductosPorCategoria: (id) => {
         return axios.get('/api/productos/porCategoria/' + id).then(x => x.data)
+    },
+    RegistrarVenta: (venta) => {
+        return axios.post('/api/Ventas/Registrar', venta).then(x => x.data)
     }
 }

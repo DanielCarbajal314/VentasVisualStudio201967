@@ -11,7 +11,7 @@ namespace Ventas.Servicios.Interfacez.Peticiones
         public int IdVendedor { get; set; }
         public int IdCliente { get; set; }
         public double Total { get; set; }
-        public int TipoDeVenta { get; set; }
+        public string TipoDeVenta { get; set; }
         public IEnumerable<DetalleDeLaNuevaVenta> Detalles { get; set; }
     }
 }
