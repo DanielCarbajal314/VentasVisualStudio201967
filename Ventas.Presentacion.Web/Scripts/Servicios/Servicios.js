@@ -14,5 +14,8 @@
     },
     RegistrarVenta: (venta) => {
         return axios.post('/api/Ventas/Registrar', venta).then(x => x.data)
-    }
+    },
+    ConsultarTodasLasVentas: () => {
+        return axios.get('/api/Ventas/ListarTodas').then(x => x.data)
+    },
 }

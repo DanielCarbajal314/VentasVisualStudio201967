@@ -12,6 +12,7 @@ namespace Ventas.Presentacion.Web
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/Galerias/Vue.js",
                         "~/Scripts/Galerias/axios.js",
+                        "~/Scripts/Galerias/download.js",              
                         "~/Scripts/Galerias/bootstrap4-vue.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
