@@ -148,6 +148,7 @@
     <Compile Include="Controllers\API\ClientesController.cs" />
     <Compile Include="Controllers\API\PersonasController.cs" />
     <Compile Include="Controllers\API\ProductosController.cs" />
+    <Compile Include="Controllers\API\VentasController.cs" />
     <Compile Include="Controllers\GestionDeClientesController.cs" />
     <Compile Include="Controllers\GestionDeVentasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

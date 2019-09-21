@@ -44,7 +44,10 @@
     <Compile Include="IGestorDePersonas.cs" />
     <Compile Include="IGestorDeProductos.cs" />
     <Compile Include="IGestorDeClientes.cs" />
+    <Compile Include="IGestorDeVentas.cs" />
     <Compile Include="Peticiones\ActualizacionDeCliente.cs" />
+    <Compile Include="Peticiones\DetalleDeLaNuevaVenta.cs" />
+    <Compile Include="Peticiones\NuevaVenta.cs" />
     <Compile Include="Peticiones\NuevoCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respuestas\CategoriaRegistrada.cs" />
@@ -52,6 +55,7 @@
     <Compile Include="Respuestas\ClienteRegistrado.cs" />
     <Compile Include="Respuestas\PersonaGenerica.cs" />
     <Compile Include="Respuestas\ProductoRegistrado.cs" />
+    <Compile Include="Respuestas\VentaRegistrada.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

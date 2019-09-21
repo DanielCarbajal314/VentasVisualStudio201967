@@ -44,6 +44,7 @@
     <Compile Include="MapaDeClientes.cs" />
     <Compile Include="MapaDePersonas.cs" />
     <Compile Include="MapaDeProductos.cs" />
+    <Compile Include="MapaDeVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
