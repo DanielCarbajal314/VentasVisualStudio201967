@@ -171,6 +171,8 @@
     <Compile Include="Controllers\GestionDeClientesController.cs" />
     <Compile Include="Controllers\GestionDeVentasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportesController.cs" />
+    <Compile Include="Filtros\FiltroDeValidacion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,6 +185,19 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Galerias\bootstrap4-vue.css" />
     <Content Include="Content\Galerias\Bootstrap4.css" />
+    <Content Include="Content\Galerias\toasty.css" />
+    <Content Include="Content\sounds\error\1.mp3" />
+    <Content Include="Content\sounds\error\2.mp3" />
+    <Content Include="Content\sounds\error\3.mp3" />
+    <Content Include="Content\sounds\info\1.mp3" />
+    <Content Include="Content\sounds\info\2.mp3" />
+    <Content Include="Content\sounds\info\3.mp3" />
+    <Content Include="Content\sounds\success\1.mp3" />
+    <Content Include="Content\sounds\success\2.mp3" />
+    <Content Include="Content\sounds\success\3.mp3" />
+    <Content Include="Content\sounds\warning\1.mp3" />
+    <Content Include="Content\sounds\warning\2.mp3" />
+    <Content Include="Content\sounds\warning\3.mp3" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -192,6 +207,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Galerias\bootstrap4-vue.js" />
     <Content Include="Scripts\Galerias\download.js" />
+    <Content Include="Scripts\Galerias\toasty.js" />
     <Content Include="Scripts\Galerias\Vue.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -204,6 +220,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Galerias\axios.js" />
+    <Content Include="Scripts\Servicios\ServicioDeNotificaciones.js" />
     <Content Include="Scripts\Servicios\Servicios.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -221,6 +238,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\GestionDeClientes\Index.cshtml" />
     <Content Include="Views\GestionDeVentas\Index.cshtml" />
+    <Content Include="Views\Reportes\Ventas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

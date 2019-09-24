@@ -18,4 +18,7 @@
     ConsultarTodasLasVentas: () => {
         return axios.get('/api/Ventas/ListarTodas').then(x => x.data)
     },
+    ConsultarTodasVentasPorVendedor: () => {
+        return axios.get('/api/Ventas/VentasPorVendedor').then(x => x.data)
+    },
 }

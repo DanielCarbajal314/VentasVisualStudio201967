@@ -12,5 +12,6 @@ namespace Ventas.Servicios.Interfacez
     {
         IEnumerable<VentaRegistrada> ListarTodasLasVentas();
         VentaRegistrada RegistrarNuevaVenta(NuevaVenta nuevaVenta);
+        IEnumerable<MontoDeVentaPorVendedor> ListarVentasPorVendedor();
     }
 }

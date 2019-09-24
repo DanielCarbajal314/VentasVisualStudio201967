@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,9 +54,11 @@
     <Compile Include="Respuestas\CategoriaRegistrada.cs" />
     <Compile Include="Respuestas\ClienteCompleto.cs" />
     <Compile Include="Respuestas\ClienteRegistrado.cs" />
+    <Compile Include="Respuestas\MontoDeVentaPorVendedor.cs" />
     <Compile Include="Respuestas\PersonaGenerica.cs" />
     <Compile Include="Respuestas\ProductoRegistrado.cs" />
     <Compile Include="Respuestas\VentaRegistrada.cs" />
+    <Compile Include="Validaciones\StringRangeAttribute.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

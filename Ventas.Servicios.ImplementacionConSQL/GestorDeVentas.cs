@@ -38,6 +38,25 @@ namespace Ventas.Servicios.ImplementacionConSQL
             }
         }
 
+        public IEnumerable<MontoDeVentaPorVendedor> ListarVentasPorVendedor()
+        {
+            using (var db = new VentasDB())
+            {
+                return db.Ventas
+                            .GroupBy(x => x.Vendedor.NombreCompleto, y=>y.Total)
+                            .Select(x => new
+                            {
+                                vendedor = x.Key,
+                                monto = x.Sum()
+                            })
+                            .ToList()
+                            .Select(x=>new MontoDeVentaPorVendedor() {
+                                MontoVendido = x.monto,
+                                NombreVendedor = x.vendedor
+                            });
+            }
+        }
+
         public VentaRegistrada RegistrarNuevaVenta(NuevaVenta nuevaVenta)
         {
             using (var db = new VentasDB())
@@ -66,5 +85,7 @@ namespace Ventas.Servicios.ImplementacionConSQL
 
             }
         }
+
+
     }
 }

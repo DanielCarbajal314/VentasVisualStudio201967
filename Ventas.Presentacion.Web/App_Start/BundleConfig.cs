@@ -12,12 +12,18 @@ namespace Ventas.Presentacion.Web
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/Galerias/Vue.js",
                         "~/Scripts/Galerias/axios.js",
-                        "~/Scripts/Galerias/download.js",              
+                        "~/Scripts/Galerias/download.js",
                         "~/Scripts/Galerias/bootstrap4-vue.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/notificaciones").Include(
+                                "~/Scripts/Galerias/toasty.js",
+                                "~/Scripts/Servicios/ServicioDeNotificaciones.js"
+                                ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/Galerias/Bootstrap4.css",
-                      "~/Content/Galerias/bootstrap4-vue.css",                      
+                      "~/Content/Galerias/bootstrap4-vue.css",
+                      "~/Content/Galerias/toasty.css",
                       "~/Content/site.css"));
         }
     }

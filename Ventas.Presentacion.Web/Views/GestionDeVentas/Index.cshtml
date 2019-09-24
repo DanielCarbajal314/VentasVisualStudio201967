@@ -56,8 +56,12 @@
             </div>
         </div>
     </b-modal>
+    <b-modal id="reporteDeVentas" size="lg" title="Reporte de Ventas por Vendedor" @@hidden="cerrarFormulario">
+        <iframe style="height:600px; width:600px;" frameborder="0" v-bind:src="urlDelReporteDeVentas"></iframe>
+    </b-modal>
     <button v-on:click="abrirFormulario" class="btn btn-primary">Registrar Venta</button>
     <a class="btn btn-primary" href="/GestionDeVentas/reporteDeVentasEnExcel">Descargar Reporte</a>
+    <button v-on:click="mostrarReporteDeVentas" class="btn btn-primary">Reporte de Ventas</button>
     <div class="col-12 row">
         <table class="table table-bordered table-hover">
             <thead class="thead-dark">
@@ -98,7 +102,8 @@
             total: 0,
             listaDeTiposDeVenta: ["Boleta", "Factura"],
             tipoDeVenta: null,
-            ventasRegistradas: []
+            ventasRegistradas: [],
+            urlDelReporteDeVentas : ''
         },
         methods: {
             registrarVenta: function () {
@@ -180,6 +185,14 @@
             eliminarDetalle: function (detalle) {
                 this.listaDeDetalles = this.listaDeDetalles.filter(x => x !== detalle);
                 this.calcularTotal();
+            },
+            mostrarReporteDeVentas: function () {
+                const urlDelReporte = 'http://localhost:58644/Reportes/Ventas';
+                this.urlDelReporteDeVentas = urlDelReporte;
+                this.$bvModal.show('reporteDeVentas');
+            },
+            cerrarFormulario: function () {
+                this.urlDelReporteDeVentas = '';
             }
         }
     })
