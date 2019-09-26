@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventas.Presentacion.Web", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Venta.Infraestructura.Archivos", "Venta.Infraestructura.Archivos\Venta.Infraestructura.Archivos.csproj", "{F155B743-8A7A-448E-A1C7-C050AEDA25B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventas.Infraestructura.Seguridad", "Ventas.Infraestructura.Seguridad\Ventas.Infraestructura.Seguridad.csproj", "{E3AFDB85-96FD-4968-B2EB-D37C2813B909}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{F155B743-8A7A-448E-A1C7-C050AEDA25B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F155B743-8A7A-448E-A1C7-C050AEDA25B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F155B743-8A7A-448E-A1C7-C050AEDA25B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3AFDB85-96FD-4968-B2EB-D37C2813B909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3AFDB85-96FD-4968-B2EB-D37C2813B909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3AFDB85-96FD-4968-B2EB-D37C2813B909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3AFDB85-96FD-4968-B2EB-D37C2813B909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{29FCEA15-064B-4047-9863-3C274F6EA19F} = {98CF9086-9F18-4D44-878F-1129C2E62C35}
 		{587B9CB6-B22F-4935-AC1E-BB9F753D9C25} = {98CF9086-9F18-4D44-878F-1129C2E62C35}
 		{F155B743-8A7A-448E-A1C7-C050AEDA25B8} = {A87BDFCB-A7CB-4F56-835C-8100C44D4358}
+		{E3AFDB85-96FD-4968-B2EB-D37C2813B909} = {A87BDFCB-A7CB-4F56-835C-8100C44D4358}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {372BB100-1CF4-4906-9D33-671A8C7E0E08}

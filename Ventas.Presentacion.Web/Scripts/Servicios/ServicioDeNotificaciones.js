@@ -37,3 +37,10 @@ axios.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+
+axios.interceptors.request.use(request => {
+    if (localStorage.token) {
+        request.headers.Authorization = localStorage.token;
+    }
+    return request;
+})

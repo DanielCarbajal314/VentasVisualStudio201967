@@ -165,14 +165,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\API\ClientesController.cs" />
+    <Compile Include="Controllers\API\Compartido\ApiControllerAuthenticado.cs" />
     <Compile Include="Controllers\API\PersonasController.cs" />
     <Compile Include="Controllers\API\ProductosController.cs" />
+    <Compile Include="Controllers\API\SeguridadController.cs" />
     <Compile Include="Controllers\API\VentasController.cs" />
     <Compile Include="Controllers\GestionDeClientesController.cs" />
     <Compile Include="Controllers\GestionDeVentasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Filtros\FiltroDeValidacion.cs" />
+    <Compile Include="Filtros\FiltroDeAuthenticacion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -269,6 +272,10 @@
     <ProjectReference Include="..\Ventas.Infraestructura.ContextoDeDatos\Ventas.Infraestructura.ContextoDeDatos.csproj">
       <Project>{0bdca424-6edb-4c9a-8763-41630b4b3dd5}</Project>
       <Name>Ventas.Infraestructura.ContextoDeDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ventas.Infraestructura.Seguridad\Ventas.Infraestructura.Seguridad.csproj">
+      <Project>{E3AFDB85-96FD-4968-B2EB-D37C2813B909}</Project>
+      <Name>Ventas.Infraestructura.Seguridad</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ventas.Servicios.ImplementacionConSQL\Ventas.Servicios.ImplementacionConSQL.csproj">
       <Project>{6301d4a1-527a-4cbf-b4fd-666c23853c2a}</Project>

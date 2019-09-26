@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
+using Ventas.Presentacion.Web.Controllers.API.Compartido;
+using Ventas.Presentacion.Web.Filtros;
 using Ventas.Servicios.ImplementacionConSQL;
 using Ventas.Servicios.Interfacez;
 using Ventas.Servicios.Interfacez.Peticiones;
@@ -11,7 +14,7 @@ using Ventas.Servicios.Interfacez.Respuestas;
 
 namespace Ventas.Presentacion.Web.Controllers.API
 {
-    public class ClientesController : ApiController
+    public class ClientesController : ApiControllerAuthenticado
     {
         IGestorDeClientes _gestorDeClientes = new GestorDeClientes();
 
@@ -30,6 +33,7 @@ namespace Ventas.Presentacion.Web.Controllers.API
         [HttpGet]
         public IEnumerable<ClienteRegistrado> ListarTodos()
         {
+            var session = this.Session;
             return this._gestorDeClientes.ListarTodosLosClientes();
         }
 

@@ -51,6 +51,7 @@
     <Compile Include="GestorDeClientes.cs" />
     <Compile Include="GestorDePersonas.cs" />
     <Compile Include="GestorDeProductos.cs" />
+    <Compile Include="GestorDeSession.cs" />
     <Compile Include="GestorDeVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,6 +63,10 @@
     <ProjectReference Include="..\Ventas.Infraestructura.ContextoDeDatos\Ventas.Infraestructura.ContextoDeDatos.csproj">
       <Project>{0bdca424-6edb-4c9a-8763-41630b4b3dd5}</Project>
       <Name>Ventas.Infraestructura.ContextoDeDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ventas.Infraestructura.Seguridad\Ventas.Infraestructura.Seguridad.csproj">
+      <Project>{e3afdb85-96fd-4968-b2eb-d37c2813b909}</Project>
+      <Name>Ventas.Infraestructura.Seguridad</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ventas.Servicios.Interfacez\Ventas.Servicios.Interfacez.csproj">
       <Project>{6dfa1c36-5d71-4c60-b7d5-470ab3c63f41}</Project>

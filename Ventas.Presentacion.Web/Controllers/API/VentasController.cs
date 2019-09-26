@@ -30,7 +30,7 @@ namespace Ventas.Presentacion.Web.Controllers.API
         }
 
         [HttpPost]
-        [FiltroDeValidacion]
+        [FiltroDeAuthenticacion]
         public VentaRegistrada Registrar(NuevaVenta nuevaVenta)
         {
             return _gestorDeVentas.RegistrarNuevaVenta(nuevaVenta);

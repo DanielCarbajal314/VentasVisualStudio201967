@@ -1,16 +1,62 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/js")
     <script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
     <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/vuesax/dist/vuesax.css" rel="stylesheet">
+    <script src="https://unpkg.com/vuesax"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style >
+        .header-sidebar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%
+        }
+
+        h4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%
+        }
+
+        .botonDePerfil {
+            margin-left:10px;
+        }
+
+    </style>
 </head>
 <body>
+    <div id="barraDeNavegacion">
+        <vs-button @@click="active=!active" color="primary" type="filled">
+            <i class="material-icons">
+                menu
+            </i>
+        </vs-button>
+        <vs-sidebar parent="body" default-index="1" color="primary" class="sidebarx" spacer v-model="active">
+            <h4> {{name}} </h4>
+            <div class="header-sidebar" slot="header">
+                <vs-avatar size="70px" src="https://randomuser.me/api/portraits/men/85.jpg" />
+            </div>
+
+            <vs-sidebar-item index="1" icon="question_answer">
+                <a href="/GestionDeVentas">Ventas</a>
+            </vs-sidebar-item>
+
+            <vs-sidebar-item index="2" icon="gavel">
+                <a href="/GestionDeClientes">Clientes</a>
+            </vs-sidebar-item>
+            
+        </vs-sidebar>
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -19,6 +65,16 @@
         </footer>
     </div>
     @RenderSection("scripts", required: false)
-</body>
     @Scripts.Render("~/bundles/notificaciones")
+    <script>
+        new Vue({
+            el: '#barraDeNavegacion',
+            data: {
+                active : false,
+                name : 'Daniel Carbajal'
+            }
+        })
+    </script>
+</body>
+
 </html>

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ventas.Dominio.Entidades.Compartido;
 
-namespace Ventas.Dominio.Entidades
+namespace Ventas.Servicios.Interfacez.Peticiones
 {
-    public class Usuario: EntidadBase
+    public class NuevoUsuario
     {
         public string NombreCompleto { get; set; }
         public string Alias { get; set; }
         public string Password { get; set; }
+        public string ConfirmacionDePassword { get; set; }
         public string Correo { get; set; }
-        public HashSet<Rol> Roles { get; set; } = new HashSet<Rol>();
+        public IEnumerable<string> NombresDeLosRoles { get; set; }
     }
 }
